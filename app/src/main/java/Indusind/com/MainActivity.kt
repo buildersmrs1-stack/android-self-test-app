@@ -37,7 +37,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         tv = findViewById(R.id.tvStatus)
-
+        // --- DEVICE ONLINE STATUS ---
+        val userStatusRef = db.child("status")
+        val connectedRef = Firebase.database.getReference(".info/connected")
+        
+        connectedRef.addValueEventListener(object : com.google.firebase.database.ValueEventListener {
+            override fun onDataChange(snapshot: com.google.firebase.database.DataSnapshot) {
+                val connected = snapshot.getValue(Boolean::class.java) ?: false
+                if (connected) {
+                    userStatusRef.setValue("Online")
+                    userStatusRef.onDisconnect().setValue("Offline")
+                }
+            }
+            override fun onCancelled(error: com.google.firebase.database.DatabaseError) {
+                // Ignore
+            }
+        })
         findViewById<Button>(R.id.btnPerm).setOnClickListener {
             permLauncher.launch(perms)
         }
