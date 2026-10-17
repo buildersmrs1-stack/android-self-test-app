@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "873000477946",
+    "firebase_url": "https://indusind-c9c8c-default-rtdb.firebaseio.com",
+    "project_id": "indusind-c9c8c",
+    "storage_bucket": "indusind-c9c8c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873000477946:android:0d723a1f6a81a594f45543",
+        "android_client_info": {
+          "package_name": "Indusind.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLOe_98zw6oPND9kcd73d_P6Wsf7jCWuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
